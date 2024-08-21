@@ -30,12 +30,5 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_DB: ${DB_NAME}
 
-  redis:
-    image: redis:latest
-    restart: unless-stopped
-    volumes: 
-      - redis-data:/data
-
 volumes:
   database-data:
-  redis-data:
