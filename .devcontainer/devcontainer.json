@@ -17,7 +17,7 @@
 	"forwardPorts": [8080, 5432],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install",
+	"postCreateCommand": "yarn install",
 
 	// Configure tool-specific properties.
 	"customizations": {

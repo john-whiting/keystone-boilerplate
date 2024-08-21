@@ -1,6 +1,7 @@
 node_modules
-.keystone/admin
+.keystone
 keystone.db
+.next
 *.log
 
 .env*
