@@ -6,7 +6,7 @@ export default function (defaultOptions: BuildOptions): BuildOptions {
   return {
     ...defaultOptions,
     entryPoints: ["src/index.ts"],
-    // treeShaking: true,
+    treeShaking: true,
     minify: isProduction,
     sourcemap: !isProduction,
   };
