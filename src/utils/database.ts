@@ -2,6 +2,10 @@ import { getEnvVariables } from "./env";
 
 
 export function getDatabaseURL(): string {
+  if (process.env.BUILDING === "true") {
+    return "";
+  }
+
   const databaseComponents = getEnvVariables("DB_NAME", "DB_USER", "DB_PASS", "DB_HOST", "DB_PORT");
 
   if (!databaseComponents.success) {
@@ -14,6 +18,10 @@ export function getDatabaseURL(): string {
 }
 
 export function getShadowDatabaseURL(): string {
+  if (process.env.BUILDING === "true") {
+    return "";
+  }
+  
   const databaseComponents = getEnvVariables("DB_SHADOW_NAME", "DB_USER", "DB_PASS", "DB_HOST", "DB_PORT");
 
   if (!databaseComponents.success) {

@@ -1,0 +1,29 @@
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: ${APP_NAME}-app
+    container_name: ${APP_NAME}-app
+    env_file:
+      - .env
+    environment:
+      - DB_PORT=5432
+    ports:
+      - "${PORT}:${PORT}"
+    depends_on:
+      - database
+  database:
+    image: postgres:latest
+    container_name: ${APP_NAME}-database
+    restart: unless-stopped
+    volumes:
+      - database-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+
+volumes:
+  database-data:
