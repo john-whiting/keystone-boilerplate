@@ -6,6 +6,7 @@
     "dev": "keystone dev",
     "start": "keystone start",
     "build": "NEXT_TELEMETRY_DISABLED=1 keystone build",
+    "compile": "tsc -p .",
     "postinstall": "keystone build --no-ui --frozen"
   },
   "dependencies": {
