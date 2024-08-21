@@ -1,7 +1,9 @@
-import type { Lists } from '.keystone/types';
-import { list } from '@keystone-6/core';
-import { allowAll } from '@keystone-6/core/access';
-import { relationship, text } from '@keystone-6/core/fields';
+import type { Lists } from ".keystone/types";
+import { list } from "@keystone-6/core";
+import { allowAll } from "@keystone-6/core/access";
+import { relationship, text } from "@keystone-6/core/fields";
+
+
 
 export const Tag: Exclude<Lists["Tag"], undefined> = list({
   // WARNING
@@ -19,6 +21,6 @@ export const Tag: Exclude<Lists["Tag"], undefined> = list({
   fields: {
     name: text(),
     // this can be helpful to find out all the Posts associated with a Tag
-    posts: relationship({ ref: 'Post.tags', many: true }),
+    posts: relationship({ ref: "Post.tags", many: true }),
   },
-})
+});

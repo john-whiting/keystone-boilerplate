@@ -7,6 +7,7 @@
     "start": "keystone start",
     "build": "NEXT_TELEMETRY_DISABLED=1 keystone build",
     "compile": "tsc -p .",
+    "lint": "eslint .",
     "postinstall": "keystone build --no-ui --frozen"
   },
   "dependencies": {
@@ -14,5 +15,13 @@
     "@keystone-6/core": "^6.2.0",
     "@keystone-6/fields-document": "^9.1.0",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@stylistic/eslint-plugin": "^2.6.4",
+    "eslint": "^9.9.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "typescript-eslint": "^8.2.0"
   }
 }

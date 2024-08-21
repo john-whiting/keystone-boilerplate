@@ -1,6 +1,6 @@
 export type GetEnvVariablesResult<T extends string> = 
-  | { success: true; variables: Record<T, string> }
-  | { success: false; missingVariables: T[] };
+  | { success: true; variables: Record<T, string>; }
+  | { success: false; missingVariables: T[]; };
 
 export function getEnvVariables<T extends string>(...variableNames: T[]): GetEnvVariablesResult<T> {
   const missingVariables: T[] = [];

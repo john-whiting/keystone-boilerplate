@@ -1,5 +1,6 @@
 import { getEnvVariables } from "./env";
 
+
 export function getDatabaseURL(): string {
   const databaseComponents = getEnvVariables("DB_NAME", "DB_USER", "DB_PASS", "DB_HOST", "DB_PORT");
 
